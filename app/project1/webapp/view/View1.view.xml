@@ -1,0 +1,28 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar">
+    <Page id="page1" title="{i18n>title}">
+    <smartFilterBar:SmartFilterBar id="smartFilterBar"
+		entitySet="TargetFormula" persistencyKey="SmartFilter_Explored">
+		<smartFilterBar:controlConfiguration>
+			<smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration"
+				key="target">
+			</smartFilterBar:ControlConfiguration>
+			<smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration1"
+				key="formula">
+			</smartFilterBar:ControlConfiguration>
+		</smartFilterBar:controlConfiguration>
+	</smartFilterBar:SmartFilterBar>
+        <smartTable:SmartTable id="LineItemsSmartTable1" entitySet="TargetFormula" smartFilterId="smartFilterBar" tableType="Table" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" editTogglable="true">
+				<!-- layout data used to make the table growing but the filter bar fixed -->
+                <Table id="_IDGenTable">
+                    <items>
+                        <ColumnListItem id="_IDGenColumnListItem"
+                            type="Navigation"
+                            press="onPressDetails"
+                        />
+                    </items>
+                </Table>
+			</smartTable:SmartTable>
+    </Page>
+</mvc:View>
