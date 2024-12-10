@@ -1,20 +1,26 @@
-using TargetService as service from '../../srv/TargetService';
+using BooksService as service from '../../srv/BooksService';
 
-annotate service.TargetFormula with @(
+annotate service.Books with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'formula',
-            Value : formula,
+            Label : 'ID',
+            Value : ID,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'target',
-            Value : target,
+            Label : 'Title',
+            Value : title,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'Stock',
+            Value : stock,
         }
     ],
     UI.SelectionFields : [
-        formula,
-        target
+        ID,
+        title,
+        stock
     ]
 );
